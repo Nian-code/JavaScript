@@ -1,16 +1,24 @@
-var persona = {  //Crea una objeto
+var nicoll = {  //Crea una objeto
     nombre: "Nicoll", 
     edad: 19
 }
 
-var persona2 = {
+var sebas = {
     nombre: "Sebas", 
     edad: 10
 }
 
-function  imprimirNombreMayus({nombre, edad}){
-    console.log(nombre.toUpperCase(), "tiene" ,edad)
+function  imprimirNombreMayus(persona){
+    var {nombre, edad} = persona
+    console.log(nombre.toUpperCase(), "tiene" , edad, "años")
 }
 
-imprimirNombreMayus(persona)
-imprimirNombreMayus(persona2)
+function  cumpleaños(persona){
+    return {
+        ...persona, // duplica el objeto y sus atributos
+        edad : persona.edad + 1
+    }
+}
+
+imprimirNombreMayus(nicoll)
+imprimirNombreMayus(sebas)
